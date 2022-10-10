@@ -1,9 +1,7 @@
 import {
   Avatar,
   Button,
-  Checkbox,
   Container,
-  FormControlLabel,
   Grid,
   TextField,
   Typography,
@@ -38,8 +36,6 @@ const LoginPage = () => {
     if (token) {
       navigate("/board");
     }
-
-    console.log("submit edildi");
   };
   return (
     <Container component="main" maxWidth="xs">
@@ -55,7 +51,7 @@ const LoginPage = () => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Login
         </Typography>
         <Box
           component="form"
@@ -89,11 +85,6 @@ const LoginPage = () => {
             id="password"
             autoComplete="current-password"
           />
-
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
           <Button
             type="submit"
             fullWidth
@@ -103,20 +94,14 @@ const LoginPage = () => {
             Sign In
           </Button>
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
             <Grid item>
-              <Link to="/register" variant="body2">
+              <Link className="auth-link" to="/register">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
           </Grid>
         </Box>
       </Box>
-      {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
     </Container>
   );
 };
