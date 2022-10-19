@@ -35,7 +35,13 @@ export const authSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  reducers: {},
+
+  reducers: {
+    logoutUser: () => {
+      localStorage.setItem("token", "");
+      localStorage.removeItem("prac-kanban");
+    },
+  },
   extraReducers: {
     [loginUserAsync.pending]: (state, action) => {
       state.isLoading = true;
@@ -60,5 +66,5 @@ export const authSlice = createSlice({
     },
   },
 });
-
+export const { logoutUser } = authSlice.actions;
 export default authSlice.reducer;

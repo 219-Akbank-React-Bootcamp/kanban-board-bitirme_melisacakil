@@ -6,6 +6,8 @@ import ProtectedRoute from "components/routing/ProtectedRoute";
 import LoginPage from "pages/LoginPage";
 import RegisterPage from "pages/RegisterPage";
 import HomePage from "pages/HomePage";
+import "./index.css";
+import "./App.css";
 
 const App = () => {
   return (
